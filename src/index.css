@@ -1,0 +1,4 @@
+/* แทนที่ไฟล์ index.css เดิมของ Vite ทั้งไฟล์ (ตัวเดิมจัด body ให้อยู่กลางจอ ทำให้เลย์เอาต์เพี้ยน) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body { margin: 0; }

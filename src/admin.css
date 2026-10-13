@@ -1,0 +1,114 @@
+/* สไตล์เฉพาะหน้าบรรณารักษ์ — ทุกกฎอยู่ใต้ .admin เพื่อไม่ไปกระทบหน้าสมาชิกเดิม
+   สี/ขนาดเป็นค่ากลางๆ ถ้าอยากให้เหมือน Mockup มากขึ้นให้ปรับค่าสีในไฟล์นี้ */
+
+/* โครงหน้า: เมนูซ้าย + เนื้อหา (ไม่มีคอลัมน์ขวาแบบหน้า Home) */
+.admin .body { display: flex; align-items: flex-start; }
+.admin .sidebar { flex: 0 0 auto; }
+.admin .content { flex: 1; min-width: 0; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.admin .spacer { flex: 1; }
+.admin .admin-tag { margin-left: 8px; padding: 2px 10px; border-radius: 999px; background: #e0e7ff; color: #3730a3; font-size: 12px; font-weight: 600; }
+
+.admin .page-title { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+.admin .page-title h2 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 22px; }
+.admin .page-title p { margin: 4px 0 0; color: #6b7280; font-size: 14px; }
+.admin .pt-actions { display: flex; gap: 8px; }
+
+.admin .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; }
+.admin .panel h3 { margin: 0 0 12px; font-size: 16px; }
+.admin .section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; }
+.admin .section-head h3 { margin: 0; }
+.admin .empty { text-align: center; color: #6b7280; padding: 24px 8px; margin: 0; }
+
+/* ปุ่ม (เสริมจาก .btn-primary เดิม) */
+.admin .btn-primary.fit { width: auto; display: inline-flex; align-items: center; gap: 6px; }
+.admin .btn-primary.ghost { background: #fff; color: #374151; border: 1px solid #d1d5db; }
+.admin .btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ตัวกรอง */
+.admin .filters { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.admin .filters .field { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; }
+.admin .filters .field.grow { flex: 1; min-width: 220px; }
+.admin .filters .field input { flex: 1; border: 0; outline: 0; background: transparent; font: inherit; min-width: 0; }
+.admin .filters select, .admin .date-field input { padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; font: inherit; }
+.admin .date-field { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #374151; }
+
+/* ตาราง */
+.admin .table-wrap { overflow-x: auto; }
+.admin .history-table { width: 100%; border-collapse: collapse; }
+.admin .history-table th { text-align: left; font-size: 13px; color: #6b7280; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; white-space: nowrap; }
+.admin .history-table td { padding: 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+.admin .row-late { background: #fef2f2; }
+.admin .late-note { display: block; color: #b91c1c; font-size: 12px; }
+.admin .sub-id { display: block; color: #6b7280; font-size: 12px; }
+.admin .row-actions { white-space: nowrap; }
+.admin .row-actions button:not(.btn-primary) { background: none; border: 0; padding: 6px; border-radius: 6px; cursor: pointer; color: #4b5563; }
+.admin .row-actions button:not(.btn-primary):hover:not(:disabled) { background: #f3f4f6; }
+.admin .row-actions button.danger { color: #dc2626; }
+.admin .row-actions button:disabled { opacity: .35; cursor: not-allowed; }
+.admin .row-actions .btn-primary + .btn-primary { margin-left: 6px; }
+
+/* ป้ายสถานะ */
+.admin .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #f3f4f6; color: #374151; }
+.admin .pill.borrowing, .admin .pill.st-borrowed { background: #dbeafe; color: #1d4ed8; }
+.admin .pill.returned, .admin .pill.st-available { background: #dcfce7; color: #15803d; }
+.admin .pill.overdue { background: #fee2e2; color: #b91c1c; }
+.admin .pill.st-maintenance { background: #fef3c7; color: #b45309; }
+
+/* การ์ดสถิติ */
+.admin .stat-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.admin .stat-cards.three { grid-template-columns: repeat(3, 1fr); }
+.admin .stat-card { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; text-align: left; padding: 16px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; font: inherit; color: inherit; }
+.admin button.stat-card:not(:disabled) { cursor: pointer; }
+.admin button.stat-card:not(:disabled):hover { border-color: #93c5fd; }
+.admin .stat-card strong { font-size: 28px; line-height: 1.1; }
+.admin .stat-card span { color: #374151; }
+.admin .stat-card small { color: #6b7280; }
+.admin .stat-card.warn { background: #fef2f2; border-color: #fca5a5; }
+
+/* แท็บ */
+.admin .tabs { display: flex; gap: 4px; border-bottom: 1px solid #e5e7eb; margin-bottom: 12px; }
+.admin .tabs button { background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 14px; font: inherit; cursor: pointer; color: #6b7280; }
+.admin .tabs button.active { color: #1d4ed8; border-bottom-color: #1d4ed8; font-weight: 600; }
+.admin .tabs em { font-style: normal; margin-left: 4px; padding: 0 7px; border-radius: 999px; background: #fee2e2; color: #b91c1c; font-size: 12px; }
+.admin .tabs.sub { border-bottom: 0; gap: 8px; }
+.admin .tabs.sub button { border: 1px solid #d1d5db; border-radius: 999px; padding: 4px 14px; font-size: 14px; }
+.admin .tabs.sub button.active { background: #dbeafe; border-color: #93c5fd; }
+
+.admin .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 900px) {
+  .admin .two-col, .admin .stat-cards.three { grid-template-columns: 1fr; }
+  .admin .content { padding: 16px; }
+}
+
+/* กราฟแท่ง */
+.admin .bars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.admin .bars li { display: grid; grid-template-columns: minmax(80px, 150px) 1fr 36px; align-items: center; gap: 10px; font-size: 14px; }
+.admin .bar-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.admin .bar-track { height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; }
+.admin .bar-fill { display: block; height: 100%; border-radius: 999px; background: #3b82f6; }
+.admin .bars strong { text-align: right; }
+
+/* หน้าต่างฟอร์ม */
+.admin .modal-backdrop { position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, .45); }
+.admin .modal { width: min(480px, 100%); max-height: 90vh; overflow-y: auto; background: #fff; border-radius: 12px; padding: 20px; }
+.admin .modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.admin .modal-head h3 { margin: 0; }
+.admin .modal-close { background: none; border: 0; font-size: 24px; line-height: 1; cursor: pointer; color: #6b7280; }
+.admin .form-grid { display: grid; gap: 12px; }
+.admin .form-grid label { display: grid; gap: 4px; font-size: 14px; color: #374151; }
+.admin .form-grid input, .admin .form-grid select { padding: 9px 12px; border: 1px solid #d1d5db; border-radius: 8px; font: inherit; background: #fff; }
+.admin .form-grid input:disabled, .admin .form-grid select:disabled { background: #f3f4f6; color: #6b7280; }
+.admin .modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+
+/* แบ่งหน้า */
+.admin .pager { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; font-size: 14px; color: #6b7280; }
+.admin .pager-nav { display: flex; align-items: center; gap: 10px; }
+.admin .pager-nav button { padding: 4px 12px; border: 1px solid #d1d5db; border-radius: 8px; background: #fff; cursor: pointer; font: inherit; }
+.admin .pager-nav button:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ข้อความแจ้งผล */
+.admin .notice { padding: 10px 14px; border-radius: 8px; font-size: 14px; }
+.admin .notice.ok { background: #dcfce7; color: #166534; }
+.admin .notice.err { background: #fee2e2; color: #991b1b; }
+
+.admin :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
